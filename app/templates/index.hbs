@@ -1,0 +1,54 @@
+<style>
+  #container {
+    margin-left: 250px;
+    margin-top: 50px;
+  }
+  #inbox th{
+    /* list-style-type: none; */
+    text-align: left;
+  }
+  #fromname {
+    width: 200px;
+  }
+  #message {
+    width: 900px;
+    color: black;
+    /* white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; */
+
+
+  }
+  #message-preview{
+
+  }
+  .truncate {
+  }
+</style>
+
+<div id="container">
+  <h1>home</h1>
+  <table id="inbox">
+    <tr>
+      <th>Name</th>
+      <th>Message</th>
+      <th>Time</th>
+    </tr>
+
+
+
+    {{#each model as |email|}}
+      <tr>
+        <td id="fromname">{{email.from}}</td>
+        {{#link-to "email" email.id}}
+        <td id="message">
+          {{email.subject}} -
+          <span id="message-preview">{{truncate-text email.message 100}}</span>
+        </td>
+        {{/link-to}}
+        <!-- <td id=""></td> -->
+      </tr>
+    {{/each}}
+  </table>
+</div>
+{{outlet}}

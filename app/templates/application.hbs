@@ -1,5 +1,47 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<style>
+  #navbox {
+    width: 250px;
+    position: fixed;
+    left: 50px;
+    top: 150px;
+
+  }
+  #composeButton {
+    position: fixed;
+    top: 80px;
+    left: 15px;
+    width: 125px;
+    height: 45px;
+    border-radius: 100px;
+    /* background-color: lightblue; */
+    margin-bottom: 0px;
+    font-size: 12pt;
+
+  }
+</style>
+
+<header>
+<h2>GMAIL</h2>
+</header>
+
+{{#link-to "compose"}}
+  <button id="composeButton">+ Compose</button>
+{{/link-to}}
+
+<nav>
+  <div id="navbox">
+    {{#link-to "index"}}
+    Inbox
+    {{/link-to}}
+    <br><br>
+    {{#link-to "sent"}}
+    Sent
+    {{/link-to}}
+    <br><br>
+    {{#link-to "trash"}}
+    Trash
+    {{/link-to}}
+  </div>
+</nav>
 
 {{outlet}}

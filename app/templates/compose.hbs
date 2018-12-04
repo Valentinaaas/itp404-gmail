@@ -1,0 +1,41 @@
+<!-- {{outlet}} -->
+<style>
+  #container {
+    margin-left: 250px;
+    margin-top: 100px;
+  }
+  hr {
+    width:1200px;
+
+  }
+</style>
+
+
+<form onsubmit={{action "createEmail"}} id="container">
+
+  <div>
+    <label for="to">To</label>
+    {{input type="text" id="to" value=to}}
+  </div>
+
+<hr  align="left">
+
+  <div>
+    <label for="subject">Subject</label>
+    {{input type="text" id="subject" value=subject}}
+
+<hr align="left">
+
+    <label for="message">Message:</label><br>
+    {{textarea id="message" rows="8" cols="80" value=message}}
+
+<hr align="left">
+
+  <label for="from">From</label>
+  {{input type="text" id="from" value=from}}
+</div>
+
+<br><br>
+
+  <button type="submit" data-test="send">Send</button>
+</form>

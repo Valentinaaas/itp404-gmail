@@ -16,8 +16,7 @@ module.exports = {
     'plugin:ember/recommended'
   ],
   env: {
-    browser: true,
-    node: true
+    browser: true
   },
   rules: {
   },

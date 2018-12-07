@@ -21,6 +21,7 @@
     /* background-color: lightblue; */
     margin-bottom: 0px;
     font-size: 12pt;
+    z-index: 100;
 
   }
   header {

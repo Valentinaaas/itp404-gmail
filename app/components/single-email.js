@@ -6,7 +6,6 @@ export default Component.extend({
     star(email, newValue) {
       email.set('starred', newValue);
       email.save();
-      console.log("click works");
     }
   }
 });

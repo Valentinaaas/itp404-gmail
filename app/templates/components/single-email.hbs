@@ -4,19 +4,20 @@
   <tr>
     <td>
       <StarButton
-      id="star-button"
-      @starred={{@email.starred}}
-      @onClick={{action "star" @email}}/>
+        id="star-button"
+        @starred={{@email.starred}}
+        @onClick={{action "star" @email}}
+      />
     </td>
 
     <td id="fromname">{{@email.from}}</td>
 
     {{#link-to "email" @email.id}}
-    <td id="message">
-      {{@email.subject}} -
-      <span id="message-preview">
-        {{truncate-text @email.message 100}}
-      </span>
+      <td id="message">
+        {{@email.subject}} -
+        <span id="message-preview">
+          {{truncate-text @email.message 100}}
+        </span>
     </td>
     {{/link-to}}
   </tr>

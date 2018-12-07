@@ -62,19 +62,20 @@
   <div id="action-bar">
     {{#link-to "index"}}
       <img
-      src="https://upload.wikimedia.org/wikipedia/commons/7/79/Ic_arrow_back_36px.svg"
-      id="back-button"
-      alt="back arrow">
+        src="https://upload.wikimedia.org/wikipedia/commons/7/79/Ic_arrow_back_36px.svg"
+        id="back-button"
+        alt="back arrow">
     {{/link-to}}
 
     <button type="button"
-    id="trash-button"
-    onclick={{action "deleteEmail" model}}
-    data-test="delete-email">
-        <img src="https://image.flaticon.com/icons/svg/60/60761.svg"
-        id="trash-pic"
-        alt="trash"
-        width="18px">
+      id="trash-button"
+      onclick={{action "deleteEmail" model}}
+      data-test="delete-email">
+        <img
+          src="https://image.flaticon.com/icons/svg/60/60761.svg"
+          id="trash-pic"
+          alt="trash"
+          width="18px">
     </button>
   </div>
 
@@ -82,7 +83,6 @@
     <div id="one-email-bar">
       <h1 data-test="subject">{{model.subject}}</h1>
       <h3 data-test="from">{{model.from}}</h3>
-      <!-- <StarButton id="star-button" @starred={{model.starred}} @onClick={{action "star" email}}/> -->
       <div id="sent-to" data-test="to">to {{model.to}}, me</div>
     </div>
     <p id="message-box" data-test="message">{{model.message}}</p>

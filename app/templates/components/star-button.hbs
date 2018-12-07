@@ -1,0 +1,11 @@
+{{yield}}
+
+  <td>
+    <button class="star-button" onclick={{action "star"}}>
+      {{#if @starred}}
+        <span class="starred" data-test-starred="starred">&#9733;</span>
+      {{else}}
+      <span class="not-starred" data-test-starred="not-starred">&#9733;</span>
+      {{/if}}
+    </button>
+  </td>

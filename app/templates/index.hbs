@@ -1,7 +1,7 @@
 <style>
   #container {
     margin-left: 250px;
-    margin-top: 50px;
+    margin-top: 100px;
   }
   #inbox th{
     /* list-style-type: none; */
@@ -9,6 +9,7 @@
   }
   #fromname {
     width: 200px;
+
   }
   #message {
     width: 900px;
@@ -16,38 +17,39 @@
     /* white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis; */
-
-
   }
   #message-preview{
 
   }
-  .truncate {
+  #star-button {
+    width:50px;
+    margin-right: 30px;
+    padding-left: 0;
+    margin-left: 0;
   }
 </style>
 
 <div id="container">
-  <h1>home</h1>
+  <h1>Inbox</h1>
   <table id="inbox">
-    <tr>
-      <th>Name</th>
-      <th>Message</th>
-      <th>Time</th>
-    </tr>
-
-
-
+    <th>
+      Starred
+    </th><br>
     {{#each model as |email|}}
-      <tr>
-        <td id="fromname">{{email.from}}</td>
-        {{#link-to "email" email.id}}
-        <td id="message">
-          {{email.subject}} -
-          <span id="message-preview">{{truncate-text email.message 100}}</span>
-        </td>
-        {{/link-to}}
-        <!-- <td id=""></td> -->
-      </tr>
+      {{#if email.starred}}
+        <SingleEmail @email={{email}} data-test="email"/>
+      {{/if}}
+    {{/each}}
+  </table>
+
+  <table id="inbox">
+    <th>
+      General
+    </th><br>
+    {{#each model as |email|}}
+      {{#unless email.starred}}
+        <SingleEmail @email={{email}} data-test="email"/>
+      {{/unless}}
     {{/each}}
   </table>
 </div>

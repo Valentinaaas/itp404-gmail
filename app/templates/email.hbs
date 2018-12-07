@@ -1,30 +1,40 @@
 <style>
+
   #container {
-    width: 1400px;
+    position: absolute;
+    top: 8%;
   }
-  #oneEmail {
+  #one-email {
     margin-left: 250px;
-    margin-top: 0px;
+    margin-top: 8%;
+    position: relative;
+
   }
-  #emailNavbar {
+  #action-bar {
     width: 1200px;
     height: 50px;
-    position: relative;
+    position: fixed;
     margin-left: 200px;
     margin-top: 0px;
     /* background-color: lightgrey; */
   }
-  #backButton {
+  #back-button {
     width: 20px;
     position: absolute;
     left: 2%;
     top: 14px;
   }
-  #trashButton {
+  #trash-pic {
     position: absolute;
     left: 10%;
     top: 14px;
     /* visibility: hidden; */
+  }
+  #trash-button {
+    border: none;
+    position: absolute;
+    left:10%;
+    top: 0px;
   }
   h1 {
     margin-top: 10px;
@@ -32,34 +42,44 @@
   }
   h3 {
     margin-bottom: 0;
+    width: 50%;
   }
-  #sentTo {
+  #sent-to {
     font-size: 10pt;
+  }
+  .star-button {
+    width: 20px;
+    position: absolute;
+    top: 58px;
+    right: 40px;
+  }
+  #message-box {
+    width: 80%;
   }
 </style>
 <div id="container">
 
-  <div id="emailNavbar">
+  <div id="action-bar">
     {{#link-to "index"}}
-      <img src="https://upload.wikimedia.org/wikipedia/commons/7/79/Ic_arrow_back_36px.svg" id="backButton" alt="back arrow">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/79/Ic_arrow_back_36px.svg" id="back-button" alt="back arrow">
     {{/link-to}}
 
-    <!-- {{#link-to "trash"}}
-      <img src="https://image.flaticon.com/icons/svg/60/60761.svg" id="trashButton" alt="trash">
-    {{/link-to}} -->
-
     <button type="button"
-    id="trashButton"
-    onclick={{action "deleteEmail" model}}> <!-- data-test="delete-post" -->
-          Delete <!-- <img src="https://image.flaticon.com/icons/svg/60/60761.svg" id="trashButton" alt="trash"  width="18px"> -->
+    id="trash-button"
+    onclick={{action "deleteEmail" model}}
+    data-test="delete-email">
+        <img src="https://image.flaticon.com/icons/svg/60/60761.svg" id="trash-pic" alt="trash"  width="18px">
       </button>
   </div>
 
-  <div id="oneEmail">
-    <h1>{{model.subject}}</h1>
-    <h3>{{model.from}}</h3>
-    <div id="sentTo">to {{model.to}}, me</div>
-    <p id="messagebox">{{model.message}}</p>
+  <div id="one-email">
+    <div id="one-email-bar">
+      <h1 data-test="subject">{{model.subject}}</h1>
+      <h3 data-test="from">{{model.from}}</h3>
+      <!-- <StarButton id="star-button" @starred={{model.starred}} @onClick={{action "star" email}}/> -->
+      <div id="sent-to" data-test="to">to {{model.to}}, me</div>
+    </div>
+    <p id="message-box" data-test="message">{{model.message}}</p>
   </div>
 </div>
 

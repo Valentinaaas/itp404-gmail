@@ -8,10 +8,10 @@ export default Controller.extend({
       // console.log(this.to);
 
       let email = this.store.createRecord('email', {
-        From: this.from,
-        To: this.to,
-        Subject: this.subject,
-        Message: this.message
+        from: this.from,
+        to: this.to,
+        subject: this.subject,
+        message: this.message
       });
 
       email.save().then(() => {

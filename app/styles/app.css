@@ -1,0 +1,44 @@
+  .gmail-header {
+    position: absolute;
+    top: 5px;
+    left: 20px;
+
+  }
+  #navbox {
+    width: 250px;
+    position: fixed;
+    left: 50px;
+    top: 150px;
+
+  }
+  #composeButton {
+    position: fixed;
+    top: 80px;
+    left: 15px;
+    width: 125px;
+    height: 45px;
+    border-radius: 100px;
+    /* background-color: lightblue; */
+    margin-bottom: 0px;
+    font-size: 12pt;
+
+  }
+  header {
+
+  }
+  .starred {
+    color: gold;
+
+  }
+  .not-starred {
+    /* border-color: grey; */
+    color: lightgrey;
+  }
+  .star-button {
+    border: none;
+    width: 100px;
+    color: none;
+    font-size: 14pt;
+    text-align: center;
+    padding: 0;
+  }

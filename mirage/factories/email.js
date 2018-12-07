@@ -1,19 +1,22 @@
-import { Factory } from 'ember-cli-mirage';
+import { Factory, faker } from 'ember-cli-mirage';
 
 export default Factory.extend({
   id(i) {
     return i + 1;
   },
-  from(i) {
+  from() {
     return faker.name.firstName() + " " + faker.name.lastName();
   },
-  to(i) {
+  to() {
     return faker.name.firstName() + " " + faker.name.lastName();
   },
-  subject(i) {
+  subject() {
     return faker.lorem.words();
   },
-  message(i) {
+  message() {
     return faker.lorem.paragraph();
+  },
+  starred() {
+    return false;
   }
 });

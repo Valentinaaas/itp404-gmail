@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Valentinaaas/itp404-gmail.svg?branch=master)](https://travis-ci.org/Valentinaaas/itp404-gmail)
+
 # assignment-4
 
 This README outlines the details of collaborating on this Ember application.

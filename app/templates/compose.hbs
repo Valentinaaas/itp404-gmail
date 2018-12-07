@@ -9,10 +9,10 @@
 
 <form onsubmit={{action "createEmail"}}>
 
-    <div>
-      <label for="from">From</label>
-      {{input type="text" id="from" value=from}}
-    </div>
+  <div>
+    <label for="from">From</label>
+    {{input type="text" id="from" value=from}}
+  </div>
 
   <div>
     <label for="to">To</label>
@@ -29,7 +29,7 @@
     {{textarea form="container" id="message" rows="8" cols="80" value=message}}
   </div>
 
-<br><br>
+  <br><br>
   <button type="submit" data-test="send">Send</button>
 </form>
 

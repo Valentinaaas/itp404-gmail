@@ -32,25 +32,33 @@
 <div id="container">
   <h1>Inbox</h1>
   <table id="inbox">
-    <th>
-      Starred
-    </th><br>
-    {{#each model as |email|}}
-      {{#if email.starred}}
-        <SingleEmail @email={{email}} data-test="email"/>
-      {{/if}}
-    {{/each}}
+    <thead>
+      <th>
+        Starred
+      </th><br>
+    </thead>
+    <tbody>
+      {{#each model as |email|}}
+        {{#if email.starred}}
+          <SingleEmail @email={{email}} data-test="email"/>
+        {{/if}}
+      {{/each}}
+    </tbody>
   </table>
 
   <table id="inbox">
-    <th>
-      General
-    </th><br>
-    {{#each model as |email|}}
-      {{#unless email.starred}}
-        <SingleEmail @email={{email}} data-test="email"/>
-      {{/unless}}
-    {{/each}}
+    <thead>
+      <th>
+        General
+      </th><br>
+    </thead>
+    <tbody>
+      {{#each model as |email|}}
+        {{#unless email.starred}}
+          <SingleEmail @email={{email}} data-test="email"/>
+        {{/unless}}
+      {{/each}}
+    </tbody>
   </table>
 </div>
 {{outlet}}

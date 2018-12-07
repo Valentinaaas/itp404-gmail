@@ -64,18 +64,21 @@
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/7/79/Ic_arrow_back_36px.svg"
         id="back-button"
-        alt="back arrow">
+        alt="back arrow"
+      >
     {{/link-to}}
 
-    <button type="button"
+    <button
+      type="button"
       id="trash-button"
       onclick={{action "deleteEmail" model}}
       data-test="delete-email">
-        <img
-          src="https://image.flaticon.com/icons/svg/60/60761.svg"
-          id="trash-pic"
-          alt="trash"
-          width="18px">
+      <img
+        src="https://image.flaticon.com/icons/svg/60/60761.svg"
+        id="trash-pic"
+        alt="trash"
+        width="18px"
+      >
     </button>
   </div>
 
